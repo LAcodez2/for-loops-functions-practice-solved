@@ -4,9 +4,9 @@
 // getClientWithNoMoney(bankAccounts) => ['Kevin', 'Jon']
 
 export function getClientWithNoMoney(array) {
-        .filter(bankAccounts => bankAccounts.balance === 0)
-        .map(bankAccounts => bankAccounts.name);
-        return array
+  return array
+    .filter((bankAccount) => bankAccount.balance === 0)
+    .map((bankAccount) => bankAccount.name);
 }
 
 // === TEST YOURSELF ===

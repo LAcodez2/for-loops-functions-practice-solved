@@ -23,23 +23,13 @@ export function getAverage(array) {
  * */
 
 export function getStringSum(str) {
-  let sum = 0;
-  let currentNumber = "";
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    if (/\d/.test(char)) {
-      currentNumber += char;
-    } else {
-      if (currentNumber !== "") {
-        sum += parseInt(currentNumber);
-        currentNumber = "";
-      }
+  let numTotal = 0;
+  for (let elem of str) {
+    if (parseInt(elem)) {
+      numTotal += +elem;
     }
   }
-  if (currentNumber !== "") {
-    sum += parseInt(currentNumber);
-  }
-  return sum;
+  return numTotal;
 }
 
 // === TEST YOURSELF ===
