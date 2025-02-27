@@ -7,15 +7,12 @@
 export function getAllWithdrawals(array) {
   let result = [];
   for (let i = 0; i < array.length; i++) {
-    if (array[i].withdrawals && array[i].withdrawals.length > 0) {
-      const sum = array[i].withdrawals.reduce(
-        (total, withdrawal) => total + withdrawal,
-        0
-      );
-      result.push(sum);
-    } else {
-      result.push(0);
+    let withdrawals = array[i].withdrawals || [];
+    let sum = 0;
+    for (let j = 0; j < withdrawals.length; j++) {
+      sum += withdrawals[j];
     }
+    result.push(sum);
   }
   return result;
 }
